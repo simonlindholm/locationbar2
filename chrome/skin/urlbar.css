@@ -16,6 +16,10 @@
 .textbox-presentation-box {
   -moz-margin-start: 1px;
 }
+.customization-target .textbox-overflow-ellipsis ,
+.customization-target .textbox-presentation-box {
+  -moz-margin-start: 0;
+}
 
 .textbox-presentation-box ,
 .textbox-presentation-segment ,
