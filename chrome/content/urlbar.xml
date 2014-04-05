@@ -121,7 +121,17 @@
           this.overflowEllipsis.value = "\u2026";
         }
 
+        // Focus hack, I haven't investigated why it's needed
         let self = this;
+        this.inputField.addEventListener("focus", function() {
+          if (!self._justFocusedFromPretty)
+            return;
+          self._justFocusedFromPretty = false;
+          setTimeout(function() {
+            self.inputField.focus();
+          });
+        }, false);
+
         this.inputBoxInner.focus = function () {
           self.inputField.focus();
         };
@@ -140,6 +150,7 @@
       </field>
       <field name="protocolHidden"/>
       <field name="_focused"/>
+      <field name="_justFocusedFromPretty"/>
       <field name="_mouseover"/>
       <field name="_iconWasHovered"/>
       <field name="_tooltipTimer"/>
@@ -502,6 +513,7 @@
       <handler event="focus" phase="capturing"><![CDATA[
         if (!this._focused && event.originalTarget == this.inputField) {
           this._focused = true;
+          this._justFocusedFromPretty = !this._plain;
           if (!this.plain)
             this.plain = true;
         }
