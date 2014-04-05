@@ -207,12 +207,6 @@
       <field name="fragmentNode">
         document.getAnonymousElementByAttribute(this, "anonid", "fragment");
       </field>
-      <field name="urlTooltip">
-        document.getElementById("urlTooltip");
-      </field>
-      <field name="urlTooltipLabel">
-        this.urlTooltip.getElementsByTagName("label")[0];
-      </field>
       <field name="_tldService" readonly="true"><![CDATA[
         Components.classes["@mozilla.org/network/effective-tld-service;1"]
                   .getService(Components.interfaces.nsIEffectiveTLDService);
@@ -390,23 +384,16 @@
       </method>
 
       <method name="_initURLTooltip">
-        <parameter name="callback"/>
-        <parameter name="object"/>
-        <parameter name="crop"/>
         <body><![CDATA[
-          if (this._tooltipTimer)
-            clearTimeout(this._tooltipTimer);
-          this._tooltipTimer = setTimeout (function (self) {
-            self._tooltipTimer = 0;
-            var tooltipText = callback.apply(object);
-            if (tooltipText) {
-              self.urlTooltipLabel.value = tooltipText;
-              self.urlTooltipLabel.crop = crop || "center";
-              var bO = self.boxObject;
-              self.urlTooltip.maxWidth = bO.width;
-              self.urlTooltip.showPopup(self, bO.screenX, bO.screenY + bO.height, "tooltip");
-            }
-          }, 400, this);
+          if (this.focused || !this._contentIsCropped)
+            return;
+          this.inputField.setAttribute("tooltiptext", this.value);
+        ]]></body>
+      </method>
+
+      <method name="_hideURLTooltip">
+        <body><![CDATA[
+          this.inputField.removeAttribute("tooltiptext");
         ]]></body>
       </method>
 
@@ -467,9 +454,7 @@
 
       <handler event="mousemove"><![CDATA[
         if (this.plain && !this._focused && this.contentIsCropped)
-          this._initURLTooltip(function () {
-            return this.plain ? this.value : null;
-          }, this, "start");
+          this._initURLTooltip(this.plain ? this.value : null);
       ]]></handler>
 
       <handler event="mouseover"><![CDATA[
@@ -594,9 +579,7 @@
       <handler event="mousemove"><![CDATA[
         if (event.originalTarget != this &&
             event.originalTarget.className != "textbox-presentation-slash")
-          gURLBar._initURLTooltip(function () {
-            return this.href;
-          }, this);
+          gURLBar._initURLTooltip(this.href);
         else
           gURLBar._hideURLTooltip();
       ]]></handler>
