@@ -121,11 +121,10 @@
           this.overflowEllipsis.value = "\u2026";
         }
 
-        let (self = this) {
-          this.inputBoxInner.focus = function () {
-            self.inputField.focus();
-          };
-        }
+        let self = this;
+        this.inputBoxInner.focus = function () {
+          self.inputField.focus();
+        };
 
         this.plain = true;
       ]]></constructor>
@@ -477,6 +476,7 @@
         else
           setTimeout (function (self) {
             if (self._mouseover && self.getAttribute("linkify") != "true") {
+              self.formatValue();
               self.plain = true;
               document.addEventListener("keydown", self, false);
             }
