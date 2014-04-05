@@ -345,8 +345,8 @@
             presentation.insertBefore(node, this.pathFileNode);
           }
           this.pathFileNode.href = (href += this.fileNode.value);
-		  this.pathFileNodeQ.href = (href += this.queryNode.value);
-		  this.pathFileNodeF.href = (href += this.fragmentNode.value);
+          this.pathFileNodeQ.href = (href += this.queryNode.value);
+          this.pathFileNodeF.href = (href += this.fragmentNode.value);
         ]]></body>
       </method>
 
