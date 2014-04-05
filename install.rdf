@@ -4,8 +4,9 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>locationbar2@design-noir.de</em:id>
     <em:name>Locationbar&#178;</em:name>
-    <em:version>1.0.6</em:version>
+    <em:version>1.0.7</em:version>
     <em:creator>D&#227;o Gottwald</em:creator>
+    <em:contributor>Simon Lindholm</em:contributor>
     <em:description>Formats and linkifies addresses in your Location bar.</em:description>
     <em:homepageURL>http://en.design-noir.de/mozilla/locationbar2/</em:homepageURL>
     <em:optionsURL>chrome://locationbar2/content/options.xul</em:optionsURL>
@@ -13,8 +14,8 @@
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>3.6</em:minVersion>
-        <em:maxVersion>4.0.*</em:maxVersion>
+        <em:minVersion>10.0</em:minVersion>
+        <em:maxVersion>31.0a1</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
