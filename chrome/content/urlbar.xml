@@ -308,16 +308,18 @@
             prePathNode.href += this.uri.asciiHost;
             this.domainNode.value = host;
             if (this.uri.port > -1)
-              prePathNode.href +=
-                (this.portNode.value = ":" + this.uri.port);
-          } else
+              prePathNode.href += (this.portNode.value = ":" + this.uri.port);
+            this.presentation.classList.remove("no-host");
+          } else {
             this.domainNode.value = "";
+            this.presentation.classList.add("no-host");
+          }
           prePathNode.href += "/";
 
           while (prePathNode.nextSibling != this.pathFileNode)
             presentation.removeChild(prePathNode.nextSibling);
 
-          var pathSegments = losslessDecodeURI(this.uri).replace(/^[^:]*:\/\/[^/]*\//, "");
+          var pathSegments = losslessDecodeURI(this.uri).replace(/^[^:]*:\/\/[^\/]*\//, "");
 
           var iFragment = pathSegments.indexOf("#");
           if (iFragment > -1) {

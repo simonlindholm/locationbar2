@@ -56,6 +56,13 @@
   color: graytext;
 }
 
+.no-host > .textbox-presentation-prePath > .textbox-presentation-protocol,
+.no-host > .textbox-presentation-path,
+.no-host .textbox-presentation-slash,
+.no-host > .textbox-presentation-pathFile > .textbox-presentation-file {
+  color: initial;
+}
+
 #urlbar[linkify="true"] .textbox-presentation-segment > :not(.textbox-presentation-slash) {
   cursor: pointer;
 }
