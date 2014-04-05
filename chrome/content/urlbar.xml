@@ -79,7 +79,11 @@
               </xul:hbox>
               <xul:hbox anonid="pathFile" class="textbox-presentation-segment textbox-presentation-pathFile">
                 <xul:label anonid="file" class="textbox-presentation-file"/>
+              </xul:hbox>
+              <xul:hbox anonid="pathFileQ" class="textbox-presentation-segment textbox-presentation-pathFile">
                 <xul:label anonid="query" class="textbox-presentation-query"/>
+              </xul:hbox>
+              <xul:hbox anonid="pathFileF" class="textbox-presentation-segment textbox-presentation-pathFile">
                 <xul:label anonid="fragment" class="textbox-presentation-fragment"/>
               </xul:hbox>
             </xul:scrollbox>
@@ -177,6 +181,12 @@
       </field>
       <field name="pathFileNode">
         document.getAnonymousElementByAttribute(this, "anonid", "pathFile");
+      </field>
+      <field name="pathFileNodeQ">
+        document.getAnonymousElementByAttribute(this, "anonid", "pathFileQ");
+      </field>
+      <field name="pathFileNodeF">
+        document.getAnonymousElementByAttribute(this, "anonid", "pathFileF");
       </field>
       <field name="fileNode">
         document.getAnonymousElementByAttribute(this, "anonid", "file");
@@ -334,7 +344,9 @@
             node.href = (href += pathSegments[i] + "/");
             presentation.insertBefore(node, this.pathFileNode);
           }
-          this.pathFileNode.href = href + this.fileNode.value + this.queryNode.value + this.fragmentNode.value;
+          this.pathFileNode.href = (href += this.fileNode.value);
+		  this.pathFileNodeQ.href = (href += this.queryNode.value);
+		  this.pathFileNodeF.href = (href += this.fragmentNode.value);
         ]]></body>
       </method>
 
