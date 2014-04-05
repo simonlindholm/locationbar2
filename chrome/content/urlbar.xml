@@ -480,7 +480,7 @@
               self.plain = true;
               document.addEventListener("keydown", self, false);
             }
-          }, 120, this);
+          }, 50, this);
       ]]></handler>
 
       <handler event="mouseout"><![CDATA[
