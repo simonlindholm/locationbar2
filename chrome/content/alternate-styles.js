@@ -9,6 +9,8 @@ var lb2_alternateStyles = {
     this.prefs.addObserver("", this, false);
     var ss = document.styleSheets;
     for (var i = ss.length - 1; i >= 0; i--) {
+      if (!ss[i].href)
+        continue;
       var style = ss[i].href.match(/^chrome:\/\/locationbar2\/skin\/alternate\/(.+)\.css$/);
       if (style) {
         this.styleSheets[style[1]] = ss[i];
