@@ -1,0 +1,21 @@
+content locationbar2 chrome/content/
+skin locationbar2 classic/1.0 chrome/skin/
+
+locale locationbar2 en-US chrome/locale/en-US/
+locale locationbar2 de-DE chrome/locale/de-DE/
+locale locationbar2 ja    chrome/locale/ja/
+locale locationbar2 ro-RO chrome/locale/ro-RO/
+locale locationbar2 ru-RU chrome/locale/ru-RU/
+
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/urlbar.css
+
+overlay chrome://browser/content/browser.xul chrome://locationbar2/content/alternate-styles.xul
+
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/domain-color.css
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/domain-strong.css
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/subdomain-inherit.css
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/pathFile-inherit.css
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/go-persist.css
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/segments-margin.css
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/breadcrumb-domain.css
+style chrome://browser/content/browser.xul chrome://locationbar2/skin/alternate/breadcrumb-all.css

@@ -1,0 +1,37 @@
+<!ENTITY options_window_title				"Opţiuni Locationbar²">
+<!ENTITY hideProtocols.label				"Ascunde protocoalele:">
+<!ENTITY hideProtocols.accesskey			"p">
+<!ENTITY clickSelectsAll.label				"Clic selectează tot">
+<!ENTITY clickSelectsAll.accesskey			"c">
+<!ENTITY doubleClickSelectsAll.label			"Dublu clic selectează tot">
+<!ENTITY doubleClickSelectsAll.accesskey		"u">
+<!ENTITY animateBlend.label				"Combină URL-urile">
+<!ENTITY animateBlend.accesskey				"U">
+<!ENTITY alternate.go-persist.label			"Arată întotdeauna butonul Du-te">
+<!ENTITY alternate.go-persist.accesskey		        "D">
+<!ENTITY alternate.segments-margin.label		"Spaţiu între segmente">
+<!ENTITY alternate.segments-margin.accesskey		"m">
+
+<!ENTITY linkification_prefs				"Conversie în adrese">
+<!ENTITY linkification.description			"Apăsarea Ctrl/Meta/Shift sau mişcarea mausului peste favicon permite clic pe fiecare segment.">
+<!ENTITY linkifyOnMouse.description			"Conversia segmentelor în adrese se activează şi la mişcarea mausului peste marginea barei de adrese:">
+<!ENTITY linkifyOnMouse.top				"de deasupra">
+<!ENTITY linkifyOnMouse.top.accesskey			"s">
+<!ENTITY linkifyOnMouse.bottom				"de dedesupt">
+<!ENTITY linkifyOnMouse.bottom.accesskey		"t">
+
+<!ENTITY alternate.subdomain-gray.label			"Subdomenii în gri">
+<!ENTITY alternate.subdomain-gray.accesskey		"g">
+
+<!ENTITY alternate.pathFile-gray.label			"Denumiri de dosare şi fişiere în gri">
+<!ENTITY alternate.pathFile-gray.accesskey		"f">
+
+<!ENTITY domain_prefs					"Domeniu">
+<!ENTITY alternate.domain-strong.label			"aldin">
+<!ENTITY alternate.domain-strong.accesskey		"l">
+
+<!ENTITY breadcrumb_prefs				"Separator pentru…">
+<!ENTITY alternate.breadcrumb-domain.label		"host">
+<!ENTITY alternate.breadcrumb-domain.accesskey		"h">
+<!ENTITY alternate.breadcrumb-all.label			"fiecare segment">
+<!ENTITY alternate.breadcrumb-all.accesskey		"e">

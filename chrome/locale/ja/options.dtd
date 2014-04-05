@@ -1,0 +1,37 @@
+<!ENTITY options_window_title				"Locationbar² 設定">
+<!ENTITY hideProtocols.label				"非表示プロトコル:">
+<!ENTITY hideProtocols.accesskey			"H">
+<!ENTITY clickSelectsAll.label				"クリックしてすべて選択する">
+<!ENTITY clickSelectsAll.accesskey			"k">
+<!ENTITY doubleClickSelectsAll.label			"ダブルクリックしてすべて選択する">
+<!ENTITY doubleClickSelectsAll.accesskey		"D">
+<!ENTITY animateBlend.label				"URL 表示を融合する">
+<!ENTITY animateBlend.accesskey				"B">
+<!ENTITY alternate.go-persist.label			"移動ボタンを常に表示する">
+<!ENTITY alternate.go-persist.accesskey		        "A">
+<!ENTITY alternate.segments-margin.label		"階層間に余白をつける">
+<!ENTITY alternate.segments-margin.accesskey		"n">
+
+<!ENTITY linkification_prefs				"リンク化">
+<!ENTITY linkification.description			"Ctrl/Meta/Shift を押すか Favicon の上からポインタを移動させるとリンク化された階層をクリックできます。">
+<!ENTITY linkifyOnMouse.description			"ロケーションバーの端からポインタを移動させたときにもリンク化を有効にする:">
+<!ENTITY linkifyOnMouse.top				"上端から">
+<!ENTITY linkifyOnMouse.top.accesskey			"t">
+<!ENTITY linkifyOnMouse.bottom				"下端から">
+<!ENTITY linkifyOnMouse.bottom.accesskey		"m">
+
+<!ENTITY alternate.subdomain-gray.label			"サブドメインをグレーにする">
+<!ENTITY alternate.subdomain-gray.accesskey		"G">
+
+<!ENTITY alternate.pathFile-gray.label			"ディレクトリとファイル名をグレーにする">
+<!ENTITY alternate.pathFile-gray.accesskey		"y">
+
+<!ENTITY domain_prefs					"ドメイン">
+<!ENTITY alternate.domain-strong.label			"強調">
+<!ENTITY alternate.domain-strong.accesskey		"s">
+
+<!ENTITY breadcrumb_prefs				"パンくずリスト">
+<!ENTITY alternate.breadcrumb-domain.label		"ホスト">
+<!ENTITY alternate.breadcrumb-domain.accesskey		"h">
+<!ENTITY alternate.breadcrumb-all.label			"階層ごと">
+<!ENTITY alternate.breadcrumb-all.accesskey		"e">
