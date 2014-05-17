@@ -2,7 +2,7 @@
 @namespace html url("http://www.w3.org/1999/xhtml");
 
 #urlbar {
-  -moz-binding: url(chrome://locationbar2/content/urlbar.xml#urlbar) !important;
+  -moz-binding: url(chrome://locationbar3/content/urlbar.xml#urlbar) !important;
 }
 
 .textbox-presentation-box > * ,
@@ -28,15 +28,15 @@
 }
 
 .textbox-presentation-segment {
-  -moz-binding: url(chrome://locationbar2/content/urlbar.xml#segment) !important;
+  -moz-binding: url(chrome://locationbar3/content/urlbar.xml#segment) !important;
 }
 
 .textbox-presentation-path {
-  -moz-binding: url(chrome://locationbar2/content/urlbar.xml#single-segment) !important;
+  -moz-binding: url(chrome://locationbar3/content/urlbar.xml#single-segment) !important;
 }
 
 .textbox-presentation-pathFile {
-  -moz-binding: url(chrome://locationbar2/content/urlbar.xml#file-segment) !important;
+  -moz-binding: url(chrome://locationbar3/content/urlbar.xml#file-segment) !important;
 }
 
 .textbox-presentation-prePath.hideTrailingSlash > .textbox-presentation-slash {

@@ -2,4 +2,4 @@ Fork of the [Locationbar² Firefox extension](https://addons.mozilla.org/en-US/f
 
 It has one new feature: on a URL like a?b#c, you can click the ?b and #c parts.
 
-It's still pretty buggy, and I'm not planning to maintain it.
+It's still pretty buggy, and I'm not planning to actively maintain it.

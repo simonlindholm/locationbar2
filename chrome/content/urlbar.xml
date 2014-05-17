@@ -511,7 +511,7 @@
 
   </binding>
 
-  <binding id="single-segment" display="xul:hbox" extends="chrome://locationbar2/content/urlbar.xml#segment">
+  <binding id="single-segment" display="xul:hbox" extends="chrome://locationbar3/content/urlbar.xml#segment">
     <content>
       <xul:label class="textbox-presentation-segment-label" anonid="label"/>
       <xul:label class="textbox-presentation-slash" value="/"/>
@@ -528,7 +528,7 @@
     </implementation>
   </binding>
 
-  <binding id="file-segment" extends="chrome://locationbar2/content/urlbar.xml#segment">
+  <binding id="file-segment" extends="chrome://locationbar3/content/urlbar.xml#segment">
     <content>
       <children/>
     </content>

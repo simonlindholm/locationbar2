@@ -1,10 +1,10 @@
-content locationbar2 chrome/content/
-skin locationbar2 classic/1.0 chrome/skin/
+content locationbar3 chrome/content/
+skin locationbar3 classic/1.0 chrome/skin/
 
-locale locationbar2 en-US chrome/locale/en-US/
-locale locationbar2 de-DE chrome/locale/de-DE/
-locale locationbar2 ja    chrome/locale/ja/
-locale locationbar2 ro-RO chrome/locale/ro-RO/
-locale locationbar2 ru-RU chrome/locale/ru-RU/
+locale locationbar3 en-US chrome/locale/en-US/
+locale locationbar3 de-DE chrome/locale/de-DE/
+locale locationbar3 ja    chrome/locale/ja/
+locale locationbar3 ro-RO chrome/locale/ro-RO/
+locale locationbar3 ru-RU chrome/locale/ru-RU/
 
-style chrome://browser/content/browser.xul chrome://locationbar2/skin/urlbar.css
+style chrome://browser/content/browser.xul chrome://locationbar3/skin/urlbar.css

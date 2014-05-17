@@ -2,20 +2,19 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>locationbar2@design-noir.de</em:id>
-    <em:name>Locationbar&#178;</em:name>
-    <em:version>1.0.7</em:version>
+    <em:id>locationbar3@simonsoftware.se</em:id>
+    <em:name>Locationbar&#179;</em:name>
+    <em:version>1.0.8</em:version>
     <em:creator>D&#227;o Gottwald</em:creator>
     <em:contributor>Simon Lindholm</em:contributor>
-    <em:description>Formats and linkifies addresses in your Location bar.</em:description>
-    <em:homepageURL>http://en.design-noir.de/mozilla/locationbar2/</em:homepageURL>
-    <em:optionsURL>chrome://locationbar2/content/options.xul</em:optionsURL>
-    <em:iconURL>chrome://locationbar2/skin/icon.png</em:iconURL>
+    <em:description>Linkifies addresses in your Location bar.</em:description>
+    <em:optionsURL>chrome://locationbar3/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://locationbar3/skin/icon.png</em:iconURL>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>10.0</em:minVersion>
-        <em:maxVersion>31.0a1</em:maxVersion>
+        <em:maxVersion>32.0a1</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
