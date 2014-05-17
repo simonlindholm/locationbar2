@@ -39,6 +39,10 @@
   -moz-binding: url(chrome://locationbar2/content/urlbar.xml#file-segment) !important;
 }
 
+.textbox-presentation-prePath.hideTrailingSlash > .textbox-presentation-slash {
+  display: none;
+}
+
 .textbox-presentation-protocol ,
 .textbox-presentation-port ,
 .textbox-presentation-slash {

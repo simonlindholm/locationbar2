@@ -1,14 +1,10 @@
-﻿<!ENTITY options_window_title				"Locationbar²-Optionen">
-<!ENTITY hideProtocols.label				"Protokolle verstecken:">
+<!ENTITY options_window_title				"Locationbar²-Optionen">
+<!ENTITY hideProtocols.label				"Protokolle verstecken">
 <!ENTITY hideProtocols.accesskey			"P">
 <!ENTITY clickSelectsAll.label				"Beim Anklicken alles markieren">
 <!ENTITY clickSelectsAll.accesskey			"m">
 <!ENTITY doubleClickSelectsAll.label			"Beim Doppelklicken alles markieren">
 <!ENTITY doubleClickSelectsAll.accesskey		"D">
-<!ENTITY alternate.go-persist.label			"Go-Button immer anzeigen">
-<!ENTITY alternate.go-persist.accesskey		        "z">
-<!ENTITY alternate.segments-margin.label		"Abstand zwischen Segmenten">
-<!ENTITY alternate.segments-margin.accesskey		"w">
 
 <!ENTITY linkification_prefs				"Verlinkung">
 <!ENTITY linkification.description			"Mit Strg/Meta/Umschalttaste und nach dem Bewegen der Maus über das Favicon können verlinkte Segmente angeklickt werden.">
@@ -17,19 +13,3 @@
 <!ENTITY linkifyOnMouse.top.accesskey			"o">
 <!ENTITY linkifyOnMouse.bottom				"unten">
 <!ENTITY linkifyOnMouse.bottom.accesskey		"u">
-
-<!ENTITY alternate.subdomain-gray.label			"Graue Subdomains">
-<!ENTITY alternate.subdomain-gray.accesskey		"G">
-
-<!ENTITY alternate.pathFile-gray.label			"Graue Verzeichnisse und Dateinamen">
-<!ENTITY alternate.pathFile-gray.accesskey		"a">
-
-<!ENTITY domain_prefs					"Domain">
-<!ENTITY alternate.domain-strong.label			"fett">
-<!ENTITY alternate.domain-strong.accesskey		"f">
-
-<!ENTITY breadcrumb_prefs				"Pfeil für …">
-<!ENTITY alternate.breadcrumb-domain.label		"den Host">
-<!ENTITY alternate.breadcrumb-domain.accesskey		"s">
-<!ENTITY alternate.breadcrumb-all.label			"jedes Segment">
-<!ENTITY alternate.breadcrumb-all.accesskey		"j">

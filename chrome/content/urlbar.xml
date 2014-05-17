@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- ***** BEGIN LICENSE BLOCK *****
    - Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -145,10 +145,6 @@
         this._prefs.getBoolPref("mouseOnBottomLinkifies")
       </field>
       <field name="uri"/>
-      <field name="hideProtocols">
-        this._prefs.getCharPref("hideProtocols").replace(/:\/\/$/, "").split(/[ ,/:]+/);
-      </field>
-      <field name="protocolHidden"/>
       <field name="_focused"/>
       <field name="_justFocusedFromPretty"/>
       <field name="_mouseover"/>
@@ -250,6 +246,10 @@
           if (typeof this.onBeforeValueSet == "function")
             val = this.onBeforeValueSet(val);
 
+          if (typeof this.trimValue == "function" && !this._disableTrim)
+            val = this.trimValue(val);
+          this.valueIsTyped = false;
+
           if (val) {
             // clear the emptyText _before_ setting a new non-empty value
             if (this._clearEmptyText)
@@ -276,30 +276,31 @@
 
       <method name="_syncValue">
         <body><![CDATA[
+          var missingProtocol = false;
           if (this.value == "")
             this.uri = null;
           else try {
-            var uri = this._ioService.newURI(this.value, null, null);
+            var val = this.value;
+            if (!/^[a-z]*:/.test(this.value)) {
+              val = "http://" + val;
+              missingProtocol = true;
+            }
+            var uri = this._ioService.newURI(val, null, null);
             this.uri = (typeof uri.host != "undefined") ? uri : null;
           } catch(e) {
             this.uri = null;
+            missingProtocol = false;
           }
           if (!this.uri) {
-            this.removeAttribute("valid-uri");
             this.contentIsCropped = false;
             return;
           }
-
-          this.setAttribute("valid-uri", "true");
-          if (!this._focused)
-            this.inputField.value = losslessDecodeURI(this.uri);
 
           var presentation = this.presentation;
           var prePathNode = this.prePathNode;
 
           prePathNode.href =
-            this.protocolNode.value = this.uri.scheme + "://";
-          this.protocolHidden = this.hideProtocols.indexOf(this.uri.scheme) > -1;
+            this.protocolNode.value = (missingProtocol ? "" : this.uri.scheme + "://");
           this.subDomainNode.value = "";
           this.portNode.value = "";
 
@@ -320,6 +321,8 @@
             this.presentation.classList.add("no-host");
           }
           prePathNode.href += "/";
+          var href = prePathNode.href;
+          var baseHref = href;
 
           while (prePathNode.nextSibling != this.pathFileNode)
             presentation.removeChild(prePathNode.nextSibling);
@@ -343,7 +346,6 @@
           pathSegments = pathSegments.split("/");
           this.fileNode.value = pathSegments.pop();
 
-          var href = prePathNode.href;
           for (var i = 0; i < pathSegments.length; i++) {
             var node = this.pathSegmentProto.cloneNode(true);
             node.value = pathSegments[i];
@@ -353,6 +355,11 @@
           this.pathFileNode.href = (href += this.fileNode.value);
           this.pathFileNodeQ.href = (href += this.queryNode.value);
           this.pathFileNodeF.href = (href += this.fragmentNode.value);
+
+          if (href == baseHref && href.slice(-1) == "/" && !this._disableTrim)
+            this.prePathNode.classList.add("hideTrailingSlash");
+          else
+            this.prePathNode.classList.remove("hideTrailingSlash");
         ]]></body>
       </method>
 
@@ -363,12 +370,6 @@
           this.presentationBox.hidden = false;
           this.subDomainNode.style.removeProperty("-moz-margin-start");
           this.portNode.style.removeProperty("-moz-margin-end");
-          if (this.protocolHidden) {
-            var domainMargin = this.protocolNode.boxObject.width / 2;
-            this.protocolNode.hidden = true;
-            this.subDomainNode.style.setProperty("-moz-margin-start", Math.ceil(domainMargin) + "px", "");
-            this.portNode.style.setProperty("-moz-margin-end", Math.floor(domainMargin) + "px", "");
-          }
         ]]></body>
       </method>
 
@@ -430,12 +431,6 @@
         <body><![CDATA[
           if (topic == "nsPref:changed") {
             switch(data) {
-              case "hideProtocols":
-                this.hideProtocols = this._prefs.getCharPref("hideProtocols").replace(/:\/\/$/, "").split(/[ ,/:]+/);
-                this._syncValue();
-                if (!this.plain)
-                  this.prettyView();
-                break;
               case "clickSelectsAll":
               case "doubleClickSelectsAll":
               case "mouseOnBottomLinkifies":
